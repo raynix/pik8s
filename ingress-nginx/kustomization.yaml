@@ -5,6 +5,9 @@ resources:
   - mandatory.yaml
   - service-nodeport.yaml
 
+patchesStrategicMerge:
+  - patch.yaml
+
 images:
   - name: quay.io/kubernetes-ingress-controller/nginx-ingress-controller
     newName: raynix/nginx-ingress-controller-arm
