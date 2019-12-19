@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: fluentd
+  labels:
+    k8s-app: fluentd-logging
+    version: v1
+spec:
+  template:
+    spec:
+      tolerations: []
+      containers:
+        - name: fluentd
+          image: raynix/fluentd-kubernetes-daemonset-arm:v1.6.2-elasticsearch7
+          env:
+            - name:  FLUENT_ELASTICSEARCH_HOST
+              value: "10.10.10.10"
+            - name:  FLUENT_ELASTICSEARCH_PORT
+              value: "9200"
+            - name: FLUENT_ELASTICSEARCH_SCHEME
+              value: "http"
+            # X-Pack Authentication
+            # =====================
+            - name: FLUENT_ELASTICSEARCH_USER
+              value: "elastic"
+            - name: FLUENT_ELASTICSEARCH_PASSWORD
+              value: "changeme"
