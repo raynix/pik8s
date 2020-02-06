@@ -12,3 +12,4 @@ patchesStrategicMerge:
 resources:
   - controller.yaml
   - ns.yaml
+  - ingress.yaml
