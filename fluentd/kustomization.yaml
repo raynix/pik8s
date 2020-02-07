@@ -5,6 +5,7 @@ namespace: fluentd
 resources:
   - fluentd-daemonset-elasticsearch-rbac.yaml
   - ns.yaml
+  - sealed-secrets.yaml
 
 patchesStrategicMerge:
   - patch.yaml
