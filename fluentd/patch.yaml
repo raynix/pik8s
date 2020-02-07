@@ -15,16 +15,19 @@ spec:
           image: raynix/fluentd-kubernetes-daemonset-arm:v1.6.2-elasticsearch7
           env:
             - name:  FLUENT_ELASTICSEARCH_HOST
+              value: ""
               valueFrom:
                 secretKeyRef:
                   name: elasticsearch
                   key: FLUENT_ELASTICSEARCH_HOST
             - name:  FLUENT_ELASTICSEARCH_PORT
+              value: ""
               valueFrom:
                 secretKeyRef:
                   name: elasticsearch
                   key: FLUENT_ELASTICSEARCH_PORT
             - name: FLUENT_ELASTICSEARCH_SCHEME
+              value: ""
               valueFrom:
                 secretKeyRef:
                   name: elasticsearch
@@ -32,11 +35,13 @@ spec:
             # X-Pack Authentication
             # =====================
             - name: FLUENT_ELASTICSEARCH_USER
+              value: ""
               valueFrom:
                 secretKeyRef:
                   name: elasticsearch
                   key: FLUENT_ELASTICSEARCH_USER
             - name: FLUENT_ELASTICSEARCH_PASSWORD
+              value: ""
               valueFrom:
                 secretKeyRef:
                   name: elasticsearch
