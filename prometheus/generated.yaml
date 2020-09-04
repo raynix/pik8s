@@ -303,7 +303,7 @@ spec:
       serviceAccountName: prometheus-alert-manager
       containers:
         - name: prometheus-alert-manager
-          image: "prom/alertmanager:v0.18.0"
+          image: "prom/alertmanager:v0.21.0"
           imagePullPolicy: "IfNotPresent"
           env:
             - name: POD_IP
@@ -315,7 +315,7 @@ spec:
             - --config.file=/etc/config/alertmanager.yaml
             - --storage.path=/data
             - --cluster.advertise-address=$(POD_IP):6783
-            - --web.external-url=/
+            - --web.external-url=https://prom.awes.one/
 
           ports:
             - containerPort: 9093
@@ -372,7 +372,7 @@ spec:
       serviceAccountName: prometheus-server
       containers:
         - name: prometheus-server
-          image: "prom/prometheus:v2.12.0"
+          image: "prom/prometheus:v2.20.1"
           imagePullPolicy: "IfNotPresent"
           args:
             - --storage.tsdb.retention.time=15d
