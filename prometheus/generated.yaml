@@ -225,7 +225,7 @@ spec:
     app: prometheus
   type: "ClusterIP"
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   labels:
@@ -281,7 +281,7 @@ spec:
           hostPath:
             path: /sys
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
@@ -350,7 +350,7 @@ spec:
             claimName: prometheus-alert-manager
 
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
