@@ -17,7 +17,7 @@ spec:
         runAsGroup: 65534
       containers:
         - name: wordpress
-          image: raynix/wordpress-arm:php7.3-fpm-alpine
+          image: wordpress:php7.4-fpm-alpine
           env:
             - name: WORDPRESS_DB_HOST
               valueFrom:
