@@ -3,7 +3,6 @@ kind: Kustomization
 namespace: wordpress-raynix
 bases:
   - ../wordpress-base
-  - ../common
 resources:
   - ingress.yaml
 
