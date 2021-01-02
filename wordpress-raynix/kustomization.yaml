@@ -5,7 +5,6 @@ bases:
   - ../wordpress-base
 resources:
   - ingress.yaml
-  - sealed-secrets.yaml
 
 nameSuffix: -raynix
 
