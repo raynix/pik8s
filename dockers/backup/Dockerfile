@@ -1,5 +1,7 @@
 FROM debian:buster
 
+COPY wordpress.sh /
+
 RUN apt-get update -qqy && \
   apt-get install -qqy mariadb-client postgresql-client apt-transport-https ca-certificates gnupg curl
 
