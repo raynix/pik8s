@@ -30,10 +30,11 @@ jobs:
       - name: Docker build backup-tool
         run: |
           cd dockers/backup
-          docker build -t ghcr.io/raynix/backup:latest .
+          docker build -t ghcr.io/raynix/backup:v0.$GITHUB_RUN_NUMBER .
+          docker tag ghcr.io/raynix/backup:v0.$GITHUB_RUN_NUMBER ghcr.io/raynix/backup:latest
 
       - name: Docker push
         run: |
           echo ${{ secrets.GHCR_PAT }} | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
           docker push ghcr.io/raynix/exif:latest
-          docker push ghcr.io/raynix/backup:latest
+          docker push ghcr.io/raynix/backup
