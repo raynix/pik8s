@@ -11,3 +11,5 @@ RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.
   apt-get install -qqy google-cloud-sdk
 
 RUN rm -rf /var/lib/apt/lists/*
+
+ENV CLOUDSDK_CONFIG=/tmp/.gcloud
