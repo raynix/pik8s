@@ -14,6 +14,6 @@ mysqldump -u $dbuser -h $dbhost -p$dbpass $dbname --opt > $mysqldump_file
 tar -czf $backup_file $mysqldump_file $ASSET_PATH
 
 gcloud auth activate-service-account --key-file=$GCP_SA
-gsutil cp $backup_file gs://$GCS
+gsutil -o "GSUtil:state_dir=/tmp/state_dir" cp $backup_file gs://$GCS
 
 rm $backup_file $mysqldump_file
