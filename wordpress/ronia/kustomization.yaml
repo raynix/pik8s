@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: wordpress-ronia
+bases:
+  - ../base
+resources:
+  - ingress.yaml
+
+nameSuffix: -ronia
+
+patchesStrategicMerge:
+  - patch.yaml
+
+configMapGenerator:
+  - name: wordpress-nginx-config
+    files:
+      - wordpress-nginx.conf
