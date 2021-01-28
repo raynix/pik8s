@@ -7,3 +7,4 @@ resources:
   - sidekiq-deploy.yaml
   - streaming-deploy.yaml
   - cronjob-media-remove-orphans.yaml
+  - cronjob-backup.yaml

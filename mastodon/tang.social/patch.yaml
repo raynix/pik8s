@@ -1,0 +1,18 @@
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: cronjob-backup
+spec:
+  schedule: 0 16 * * *
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: backup-tool
+              command:
+                - /mastodon.sh
+                - tang.social
+                - /gcp/idyllic-depth-239301-8ede1c36924a.json
+                - raynix-melbourne-backup
