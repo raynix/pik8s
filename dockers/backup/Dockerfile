@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM ubuntu:focal
 
 COPY *.sh /
 
