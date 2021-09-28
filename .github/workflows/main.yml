@@ -34,6 +34,7 @@ jobs:
           docker tag ghcr.io/raynix/backup:v0.$GITHUB_RUN_NUMBER ghcr.io/raynix/backup:latest
 
       - name: Docker build sideloader
+        run: |
           cd dockers/sideloader
           docker build -t ghcr.io/raynix/sideloader:v0.$GITHUB_RUN_NUMBER .
           docker tag ghcr.io/raynix/sideloader:v0.$GITHUB_RUN_NUMBER ghcr.io/raynix/sideloader:latest
