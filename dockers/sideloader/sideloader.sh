@@ -1,6 +1,6 @@
 #!/bin/sh
 DEST=${DEST:-/sideloader}
-EXECUTABLE=${EXECUTABLE:-no}
+EXECUTABLE=${EXECUTABLE:-yes}
 set -xe
 
 until [ -z ${1+x} ] || [ -z ${2+x} ]; do
