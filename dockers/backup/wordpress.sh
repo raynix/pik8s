@@ -10,7 +10,7 @@ GCS="$4"
 backup_file="/tmp/wordpress-$BACKUP_NAME-$(date +%s).tar.gz"
 mysqldump_file=/tmp/mysqldump.sql
 
-mysqldump -u $dbuser -h $dbhost -p$dbpass $dbname --opt > $mysqldump_file
+mysqldump -u $WORDPRESS_DB_USER -h $WORDPRESS_DB_HOST -p$WORDPRESS_DB_PASSWORD $WORDPRESS_DB_NAME --opt > $mysqldump_file
 tar -czf $backup_file $mysqldump_file $ASSET_PATH
 
 gcloud auth activate-service-account --key-file=$GCP_SA
